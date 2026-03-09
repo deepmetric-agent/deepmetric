@@ -1,4 +1,4 @@
-import { Header, Hero, ToolsGrid, About, Services, Footer } from "@/components/landing";
+import { Header, Hero, ToolsGrid, About, Services, Contact, Footer } from "@/components/landing";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
         <ToolsGrid />
         <About />
         <Services />
+        <Contact />
       </main>
       <Footer />
     </div>

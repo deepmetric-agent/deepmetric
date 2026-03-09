@@ -93,6 +93,33 @@
     "denied": "Acceso denegado",
     "denied_msg": "No tienes permisos para acceder a esta sección."
   },
+  "contact": {
+    "label": "Contacto",
+    "title": "Hablemos de tu rendimiento",
+    "subtitle": "¿Tienes un proyecto, necesitas una herramienta a medida o quieres llevar tu entrenamiento al siguiente nivel? Cuéntame y te respondo en menos de 24h.",
+    "email_label": "Email directo",
+    "response_label": "Tiempo de respuesta",
+    "response_time": "< 24 horas en días laborables",
+    "free_label": "Primera consulta gratuita",
+    "free_desc": "30 minutos para entender tus necesidades sin compromiso.",
+    "name": "Nombre",
+    "email_field": "Email",
+    "phone": "Teléfono",
+    "service_label": "Servicio",
+    "service_placeholder": "Selecciona un servicio",
+    "service_coaching": "Coaching 1-to-1",
+    "service_tools": "Herramienta a medida",
+    "service_consulting": "Consultoría",
+    "service_other": "Otro",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success_title": "¡Mensaje enviado!",
+    "success_msg": "Gracias por contactar. Te responderé lo antes posible.",
+    "send_another": "Enviar otro mensaje",
+    "error": "Error al enviar. Inténtalo de nuevo.",
+    "privacy": "Tu información se tratará de forma confidencial y no se compartirá con terceros."
+  },
   "common": {
     "back_to_site": "← Volver al sitio"
   }

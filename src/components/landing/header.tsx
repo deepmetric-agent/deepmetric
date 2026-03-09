@@ -49,9 +49,9 @@ export function Header() {
           <ThemeToggle />
           <UserMenu />
           <LoginButton />
-          <Button className="hidden sm:flex" size="sm">
-            {t("contact")}
-          </Button>
+          <Link href="#contacto" className="hidden sm:flex">
+            <Button size="sm">{t("contact")}</Button>
+          </Link>
 
           {/* Mobile menu */}
           <Button
@@ -80,7 +80,9 @@ export function Header() {
                 {t(link.key)}
               </Link>
             ))}
-            <Button className="mt-2 w-full">{t("contact")}</Button>
+            <Link href="#contacto" onClick={() => setOpen(false)}>
+              <Button className="mt-2 w-full">{t("contact")}</Button>
+            </Link>
           </nav>
         </div>
       )}
