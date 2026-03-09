@@ -18,14 +18,14 @@ import {
 const menuByRole: Record<string, { href: string; label: string; icon: React.ElementType }[]> = {
   ADMIN: [
     { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
-    { href: "/keystatic/collection/posts", label: "Artículos", icon: FileText },
+    { href: "/admin/posts", label: "Artículos", icon: FileText },
     { href: "/admin/users", label: "Usuarios", icon: Users },
     { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
     { href: "/admin/tools", label: "Herramientas", icon: Wrench },
   ],
   CONTENT_MANAGER: [
     { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
-    { href: "/keystatic/collection/posts", label: "Artículos", icon: FileText },
+    { href: "/admin/posts", label: "Artículos", icon: FileText },
   ],
   COLLABORATOR: [
     { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },

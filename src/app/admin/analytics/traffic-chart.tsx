@@ -32,36 +32,40 @@ export function TrafficChart() {
         <AreaChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
           <defs>
             <linearGradient id="colorViews" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0} />
+              <stop offset="5%" stopColor="#38bdf8" stopOpacity={0.4} />
+              <stop offset="95%" stopColor="#38bdf8" stopOpacity={0.05} />
             </linearGradient>
             <linearGradient id="colorUsers" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#10b981" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+              <stop offset="5%" stopColor="#34d399" stopOpacity={0.4} />
+              <stop offset="95%" stopColor="#34d399" stopOpacity={0.05} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+          <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.15} stroke="#94a3b8" />
           <XAxis
             dataKey="name"
-            tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
-            axisLine={{ stroke: "hsl(var(--border))" }}
+            tick={{ fill: "#94a3b8", fontSize: 12 }}
+            axisLine={{ stroke: "#64748b" }}
+            tickLine={{ stroke: "#64748b" }}
           />
           <YAxis
-            tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
-            axisLine={{ stroke: "hsl(var(--border))" }}
+            tick={{ fill: "#94a3b8", fontSize: 12 }}
+            axisLine={{ stroke: "#64748b" }}
+            tickLine={{ stroke: "#64748b" }}
           />
           <Tooltip
             contentStyle={{
-              backgroundColor: "hsl(var(--card))",
-              border: "1px solid hsl(var(--border))",
+              backgroundColor: "#1e293b",
+              border: "1px solid #334155",
               borderRadius: "8px",
               fontSize: "12px",
+              color: "#e2e8f0",
             }}
           />
           <Area
             type="monotone"
             dataKey="views"
-            stroke="hsl(var(--primary))"
+            stroke="#38bdf8"
+            strokeWidth={2}
             fillOpacity={1}
             fill="url(#colorViews)"
             name="Page Views"
@@ -69,7 +73,8 @@ export function TrafficChart() {
           <Area
             type="monotone"
             dataKey="users"
-            stroke="#10b981"
+            stroke="#34d399"
+            strokeWidth={2}
             fillOpacity={1}
             fill="url(#colorUsers)"
             name="Users"
