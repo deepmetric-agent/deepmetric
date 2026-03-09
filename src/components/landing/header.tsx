@@ -6,6 +6,7 @@ import { Menu, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LoginButton } from "@/components/auth/login-button";
 
 const navKeys = [
   { key: "tools", href: "#herramientas" },
@@ -45,6 +46,7 @@ export function Header() {
         {/* Actions */}
         <div className="flex items-center gap-4">
           <ThemeToggle />
+          <LoginButton />
           <Button className="hidden sm:flex" size="sm">
             {t("contact")}
           </Button>
