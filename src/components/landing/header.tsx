@@ -30,17 +30,17 @@ export function Header() {
           <Image
             src="/logoclaro.png"
             alt="DeepMetric"
-            width={240}
-            height={60}
-            className="block h-12 w-auto mix-blend-multiply dark:hidden"
+            width={280}
+            height={70}
+            className="block h-14 w-auto dark:hidden"
             priority
           />
           <Image
             src="/logooscuro.png"
             alt="DeepMetric"
-            width={240}
-            height={60}
-            className="hidden h-12 w-auto mix-blend-screen dark:block"
+            width={280}
+            height={70}
+            className="hidden h-14 w-auto dark:block"
             priority
           />
         </Link>
