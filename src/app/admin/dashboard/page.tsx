@@ -1,58 +1,27 @@
-import { Users, FileText, BarChart3, Activity, Clock } from "lucide-react";
+import { Users, FileText, BarChart3, Activity, Clock, Wrench } from "lucide-react";
+import { prisma } from "@/lib/db";
+import { reader } from "@/lib/keystatic/reader";
+import { tools } from "@/lib/constants";
 
-const summaryCards = [
-  {
-    title: "Total Users",
-    value: "1,284",
-    change: "+12%",
-    icon: Users,
-  },
-  {
-    title: "Blog Posts",
-    value: "42",
-    change: "+3",
-    icon: FileText,
-  },
-  {
-    title: "Active Metrics",
-    value: "8.4K",
-    change: "+18%",
-    icon: BarChart3,
-  },
-];
+export default async function DashboardPage() {
+  const [userCount, recentUsers, allPosts] = await Promise.all([
+    prisma.user.count(),
+    prisma.user.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 5,
+      select: { id: true, name: true, email: true, image: true, role: true, createdAt: true },
+    }),
+    reader.collections.posts.all(),
+  ]);
 
-const recentActivity = [
-  {
-    action: "New user registered",
-    detail: "carlos@example.com signed up via GitHub",
-    time: "2 min ago",
-  },
-  {
-    action: "Blog post published",
-    detail: '"Comparativa de Sensores HRV" by Luisma',
-    time: "1 hour ago",
-  },
-  {
-    action: "Tool update deployed",
-    detail: "Power Guide v2.3 — new wind model",
-    time: "3 hours ago",
-  },
-  {
-    action: "Analytics threshold reached",
-    detail: "Monthly pageviews exceeded 10K",
-    time: "Yesterday",
-  },
-];
+  const publishedPosts = allPosts.filter((p) => !p.entry.draft);
 
-const platformPerformance = [
-  { metric: "Avg. Response Time", value: "142ms", status: "good" },
-  { metric: "Uptime (30d)", value: "99.97%", status: "good" },
-  { metric: "Error Rate", value: "0.03%", status: "good" },
-  { metric: "Active Sessions", value: "28", status: "neutral" },
-  { metric: "Cache Hit Rate", value: "94.2%", status: "good" },
-];
+  const summaryCards = [
+    { title: "Usuarios", value: String(userCount), icon: Users },
+    { title: "Blog Posts", value: String(publishedPosts.length), icon: FileText },
+    { title: "Herramientas", value: String(tools.length), icon: Wrench },
+  ];
 
-export default function DashboardPage() {
   return (
     <div className="space-y-8">
       <div>
@@ -74,55 +43,64 @@ export default function DashboardPage() {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">{card.title}</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-bold">{card.value}</span>
-                <span className="text-xs font-medium text-emerald-500">
-                  {card.change}
-                </span>
-              </div>
+              <span className="text-2xl font-bold">{card.value}</span>
             </div>
           </div>
         ))}
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {/* Platform Performance */}
+        {/* Recent Posts */}
         <div className="rounded-xl border border-border bg-card p-6">
-          <h2 className="mb-4 text-lg font-bold">Platform Performance</h2>
+          <h2 className="mb-4 text-lg font-bold">Últimos Posts</h2>
           <div className="space-y-3">
-            {platformPerformance.map((item) => (
-              <div
-                key={item.metric}
-                className="flex items-center justify-between rounded-lg bg-muted/50 px-4 py-3 text-sm"
-              >
-                <span className="text-muted-foreground">{item.metric}</span>
-                <span className="font-medium">{item.value}</span>
-              </div>
-            ))}
+            {publishedPosts.length === 0 ? (
+              <p className="text-sm text-muted-foreground">Sin posts publicados aún.</p>
+            ) : (
+              publishedPosts.slice(0, 5).map((post) => (
+                <div
+                  key={post.slug}
+                  className="flex items-center justify-between rounded-lg bg-muted/50 px-4 py-3 text-sm"
+                >
+                  <span className="font-medium truncate">{post.entry.title}</span>
+                  <span className="shrink-0 text-xs text-muted-foreground">
+                    {post.entry.date
+                      ? new Date(post.entry.date).toLocaleDateString("es-ES", { month: "short", day: "numeric" })
+                      : "—"}
+                  </span>
+                </div>
+              ))
+            )}
           </div>
         </div>
 
-        {/* Recent Activity */}
+        {/* Recent Users */}
         <div className="rounded-xl border border-border bg-card p-6">
-          <h2 className="mb-4 text-lg font-bold">Recent Activity</h2>
+          <h2 className="mb-4 text-lg font-bold">Usuarios Recientes</h2>
           <div className="space-y-4">
-            {recentActivity.map((item, i) => (
-              <div key={i} className="flex gap-3">
-                <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                  <Activity className="h-3.5 w-3.5 text-primary" />
+            {recentUsers.length === 0 ? (
+              <p className="text-sm text-muted-foreground">Sin usuarios registrados aún.</p>
+            ) : (
+              recentUsers.map((user) => (
+                <div key={user.id} className="flex gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary/10">
+                    {user.image ? (
+                      <img src={user.image} alt="" className="h-full w-full object-cover" />
+                    ) : (
+                      <Activity className="h-3.5 w-3.5 text-primary" />
+                    )}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium truncate">{user.name ?? user.email}</p>
+                    <p className="text-xs text-muted-foreground">{user.role}</p>
+                  </div>
+                  <div className="flex shrink-0 items-start gap-1 text-xs text-muted-foreground">
+                    <Clock className="mt-0.5 h-3 w-3" />
+                    {new Date(user.createdAt).toLocaleDateString("es-ES", { month: "short", day: "numeric" })}
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium">{item.action}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {item.detail}
-                  </p>
-                </div>
-                <div className="flex shrink-0 items-start gap-1 text-xs text-muted-foreground">
-                  <Clock className="mt-0.5 h-3 w-3" />
-                  {item.time}
-                </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>

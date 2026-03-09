@@ -1,40 +1,17 @@
-import { TrendingUp, Eye, Clock, MousePointer } from "lucide-react";
+import { Eye, Clock, MousePointer, TrendingUp } from "lucide-react";
+import { TrafficChart } from "./traffic-chart";
 
 const metrics = [
-  {
-    label: "Page Views (30d)",
-    value: "12,482",
-    change: "+22%",
-    icon: Eye,
-  },
-  {
-    label: "Avg. Session Duration",
-    value: "3m 42s",
-    change: "+8%",
-    icon: Clock,
-  },
-  {
-    label: "Bounce Rate",
-    value: "34.2%",
-    change: "-5%",
-    icon: MousePointer,
-  },
-  {
-    label: "Conversions",
-    value: "187",
-    change: "+15%",
-    icon: TrendingUp,
-  },
+  { label: "Page Views (30d)", value: "12,482", change: "+22%", icon: Eye },
+  { label: "Avg. Session", value: "3m 42s", change: "+8%", icon: Clock },
+  { label: "Bounce Rate", value: "34.2%", change: "-5%", icon: MousePointer },
+  { label: "Conversions", value: "187", change: "+15%", icon: TrendingUp },
 ];
 
 const topPages = [
   { path: "/", views: 4210, title: "Landing Page" },
   { path: "/blog", views: 2834, title: "Blog Listing" },
-  {
-    path: "/blog/comparativa-sensores-hrv",
-    views: 1892,
-    title: "Comparativa de Sensores HRV",
-  },
+  { path: "/blog/comparativa-sensores-hrv", views: 1892, title: "Comparativa de Sensores HRV" },
   { path: "/app/", views: 1456, title: "Power Guide" },
   { path: "/route/", views: 1102, title: "Route Analyzer" },
 ];
@@ -70,14 +47,10 @@ export default function AnalyticsPage() {
         ))}
       </div>
 
-      {/* Chart placeholder */}
+      {/* Chart */}
       <div className="rounded-xl border border-border bg-card p-6">
         <h2 className="mb-4 text-lg font-bold">Traffic Overview</h2>
-        <div className="flex h-64 items-center justify-center rounded-lg bg-muted/50 text-muted-foreground">
-          <p className="text-sm">
-            Gráfico de tráfico (integrar Recharts en producción)
-          </p>
-        </div>
+        <TrafficChart />
       </div>
 
       {/* Top pages */}
