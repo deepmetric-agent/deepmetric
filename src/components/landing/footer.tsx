@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { Activity, Github, Mail } from "lucide-react";
 import { siteConfig, tools } from "@/lib/constants";
 import { LanguageSelector } from "@/components/language-selector";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("footer");
+
   return (
     <footer className="border-t border-border bg-background px-6 py-12 lg:px-8">
       <div className="mx-auto max-w-7xl">
@@ -20,9 +25,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mb-6 text-sm text-muted-foreground">
-              Llevando el entrenamiento de resistencia al siguiente nivel a
-              través del análisis de datos riguroso y herramientas
-              personalizadas.
+              {t("tagline")}
             </p>
             <div className="flex gap-4">
               <a
@@ -45,7 +48,7 @@ export function Footer() {
           {/* Herramientas */}
           <div>
             <h4 className="mb-6 text-sm font-bold uppercase tracking-widest">
-              Herramientas
+              {t("tools_heading")}
             </h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               {tools.map((tool) => (
@@ -66,7 +69,7 @@ export function Footer() {
           {/* Comunidad */}
           <div>
             <h4 className="mb-6 text-sm font-bold uppercase tracking-widest">
-              Comunidad
+              {t("community_heading")}
             </h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li>
@@ -74,17 +77,17 @@ export function Footer() {
                   href="/blog"
                   className="transition-colors hover:text-primary"
                 >
-                  Blog de Rendimiento
+                  {t("blog_link")}
                 </Link>
               </li>
               <li>
                 <a href="#" className="transition-colors hover:text-primary">
-                  Newsletter
+                  {t("newsletter")}
                 </a>
               </li>
               <li>
                 <a href="#" className="transition-colors hover:text-primary">
-                  Estudios de caso
+                  {t("case_studies")}
                 </a>
               </li>
               <li>
@@ -92,7 +95,7 @@ export function Footer() {
                   href="#sobre-mi"
                   className="transition-colors hover:text-primary"
                 >
-                  Sobre Luisma
+                  {t("about_link")}
                 </Link>
               </li>
             </ul>
@@ -101,13 +104,12 @@ export function Footer() {
           {/* Preferences */}
           <div>
             <h4 className="mb-6 text-sm font-bold uppercase tracking-widest">
-              Preferencias
+              {t("preferences")}
             </h4>
             <div className="flex flex-col gap-4">
               <LanguageSelector />
               <p className="text-[10px] text-muted-foreground">
-                © {new Date().getFullYear()} DeepMetric.fit. Todos los derechos
-                reservados.
+                © {new Date().getFullYear()} DeepMetric.fit. {t("rights")}
               </p>
             </div>
           </div>

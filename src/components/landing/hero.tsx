@@ -4,8 +4,11 @@ import { Activity, Zap } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
+  const t = useTranslations("hero");
+
   return (
     <section className="relative overflow-hidden px-6 py-16 lg:px-8 lg:py-32">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -17,21 +20,19 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            Nueva era en rendimiento
+            {t("badge")}
           </div>
 
           {/* Title */}
           <h1 className="text-5xl font-black leading-[1.1] tracking-tight lg:text-7xl">
-            DeepMetric —{" "}
-            <span className="text-primary">Sports Tech</span> & Data-Driven
-            Coaching
+            {t("title_pre")}{" "}
+            <span className="text-primary">{t("title_highlight")}</span>{" "}
+            {t("title_post")}
           </h1>
 
           {/* Subtitle */}
           <p className="max-w-[540px] text-lg leading-relaxed text-muted-foreground">
-            Herramientas propias y servicios de coaching basados en datos para
-            atletas que buscan la máxima precisión en su entrenamiento y
-            competición.
+            {t("subtitle")}
           </p>
 
           {/* CTAs */}
@@ -43,7 +44,7 @@ export function Hero() {
                 "h-14 min-w-[180px] rounded-xl px-8 text-base font-bold shadow-lg shadow-primary/20"
               )}
             >
-              Explorar herramientas
+              {t("cta_tools")}
             </Link>
             <Link
               href="/blog"
@@ -52,7 +53,7 @@ export function Hero() {
                 "h-14 min-w-[180px] rounded-xl px-8 text-base font-bold"
               )}
             >
-              Leer el blog
+              {t("cta_blog")}
             </Link>
           </div>
         </div>
@@ -75,10 +76,10 @@ export function Hero() {
               </div>
               <div>
                 <div className="text-sm font-bold uppercase tracking-wide">
-                  Última métrica
+                  {t("metric_label")}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  Eficiencia aeróbica: +12% vs mes anterior
+                  {t("metric_value")}
                 </div>
               </div>
             </div>

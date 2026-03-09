@@ -1,7 +1,12 @@
+"use client";
+
 import { Code, Github, Linkedin } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 
 export function About() {
+  const t = useTranslations("about");
+
   return (
     <section id="sobre-mi" className="overflow-hidden px-6 py-20 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -24,25 +29,17 @@ export function About() {
           <div className="order-1 flex flex-col gap-6 lg:order-2">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
               <span className="h-px w-8 bg-primary" />
-              El Fundador
+              {t("label")}
             </div>
 
-            <h2 className="text-4xl font-black">{siteConfig.author.name}</h2>
+            <h2 className="text-4xl font-black">{t("title")}</h2>
             <p className="text-xl font-medium text-primary">
-              {siteConfig.author.title}
+              {t("role")}
             </p>
 
             <div className="space-y-4 leading-relaxed text-muted-foreground">
-              <p>
-                Mi enfoque combina la ciencia del ejercicio más avanzada con el
-                desarrollo de software a medida. No solo analizo tus datos; creo
-                las herramientas para interpretarlos mejor.
-              </p>
-              <p>
-                Con años de experiencia en el sector tecnológico y el deporte de
-                resistencia, mi misión es cerrar la brecha entre la complejidad
-                de los datos y la ejecución práctica del entrenamiento.
-              </p>
+              <p>{t("bio_1")}</p>
+              <p>{t("bio_2")}</p>
             </div>
 
             {/* Stats */}
@@ -50,13 +47,13 @@ export function About() {
               <div className="rounded-xl border border-border p-4">
                 <div className="text-2xl font-bold">10+</div>
                 <div className="text-xs font-bold uppercase text-muted-foreground">
-                  Años Coaching
+                  {t("years")}
                 </div>
               </div>
               <div className="rounded-xl border border-border p-4">
                 <div className="text-2xl font-bold">500+</div>
                 <div className="text-xs font-bold uppercase text-muted-foreground">
-                  Datasets analizados
+                  {t("datasets")}
                 </div>
               </div>
             </div>

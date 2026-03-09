@@ -3,9 +3,11 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Github, LogOut } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function LoginButton() {
   const { data: session, status } = useSession();
+  const t = useTranslations("auth");
 
   if (status === "loading") {
     return (
@@ -24,7 +26,7 @@ export function LoginButton() {
         className="gap-2"
       >
         <LogOut className="h-4 w-4" />
-        Salir
+        {t("logout")}
       </Button>
     );
   }
@@ -37,7 +39,7 @@ export function LoginButton() {
       className="gap-2"
     >
       <Github className="h-4 w-4" />
-      Iniciar sesión
+      {t("login")}
     </Button>
   );
 }

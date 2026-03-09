@@ -1,50 +1,39 @@
-import { Dumbbell, Code2, LineChart, CheckCircle } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+"use client";
 
-const services = [
+import { Dumbbell, Code2, LineChart, CheckCircle } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+
+const serviceKeys = [
   {
     icon: <Dumbbell className="h-9 w-9" />,
-    title: "Coaching 1-to-1",
-    description:
-      "Entrenamiento totalmente personalizado basado en tu fisiología y objetivos de competición. Análisis diario de métricas.",
-    features: [
-      "Planificación en TrainingPeaks",
-      "Análisis WKO5 avanzado",
-      "Revisión semanal 15min",
-    ],
-    cta: "Ver planes",
+    titleKey: "coaching_title",
+    descKey: "coaching_desc",
+    featureKeys: ["coaching_f1", "coaching_f2", "coaching_f3"],
+    ctaKey: "coaching_cta",
     highlighted: false,
   },
   {
     icon: <Code2 className="h-9 w-9" />,
-    title: "Herramientas a medida",
-    description:
-      "Desarrollo de calculadoras, dashboards o integraciones específicas para tus necesidades de datos deportivos.",
-    features: [
-      "Dashboards personalizados",
-      "API Integrations (Strava/Garmin)",
-      "Algoritmos propios",
-    ],
-    cta: "Consultar presupuesto",
+    titleKey: "tools_title",
+    descKey: "tools_desc",
+    featureKeys: ["tools_f1", "tools_f2", "tools_f3"],
+    ctaKey: "tools_cta",
     highlighted: true,
   },
   {
     icon: <LineChart className="h-9 w-9" />,
-    title: "Consultoría",
-    description:
-      "Sesiones puntuales para análisis de test de lactato, ergoespirometrías o diseño de estrategia nutricional.",
-    features: [
-      "Análisis de tests",
-      "Optimización aerodinámica",
-      "Estrategia de carrera",
-    ],
-    cta: "Reservar sesión",
+    titleKey: "consulting_title",
+    descKey: "consulting_desc",
+    featureKeys: ["consulting_f1", "consulting_f2", "consulting_f3"],
+    ctaKey: "consulting_cta",
     highlighted: false,
   },
-];
+] as const;
 
 export function Services() {
+  const t = useTranslations("services");
+
   return (
     <section
       id="servicios"
@@ -54,19 +43,18 @@ export function Services() {
         {/* Section header */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-black tracking-tight">
-            Servicios Especializados
+            {t("title")}
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Soluciones de alto rendimiento diseñadas para atletas individuales,
-            equipos y marcas del sector deportivo.
+            {t("subtitle")}
           </p>
         </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {services.map((service) => (
+          {serviceKeys.map((service) => (
             <div
-              key={service.title}
+              key={service.titleKey}
               className={cn(
                 "relative flex flex-col rounded-2xl border p-8 transition-all",
                 service.highlighted
@@ -76,21 +64,21 @@ export function Services() {
             >
               {service.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-[10px] font-black uppercase text-primary-foreground">
-                  Más solicitado
+                  {t("popular")}
                 </div>
               )}
 
               <div className="mb-6 text-primary">{service.icon}</div>
-              <h3 className="mb-4 text-2xl font-bold">{service.title}</h3>
+              <h3 className="mb-4 text-2xl font-bold">{t(service.titleKey)}</h3>
               <p className="mb-6 flex-grow text-muted-foreground">
-                {service.description}
+                {t(service.descKey)}
               </p>
 
               <ul className="mb-8 space-y-3 text-sm">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2">
+                {service.featureKeys.map((fKey) => (
+                  <li key={fKey} className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-primary" />
-                    {feature}
+                    {t(fKey)}
                   </li>
                 ))}
               </ul>
@@ -103,7 +91,7 @@ export function Services() {
                     : "border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
                 )}
               >
-                {service.cta}
+                {t(service.ctaKey)}
               </button>
             </div>
           ))}

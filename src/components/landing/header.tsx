@@ -4,10 +4,18 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { navLinks } from "@/lib/constants";
+import { useTranslations } from "next-intl";
+
+const navKeys = [
+  { key: "tools", href: "#herramientas" },
+  { key: "coaching", href: "#servicios" },
+  { key: "about", href: "#sobre-mi" },
+  { key: "blog", href: "/blog" },
+] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("nav");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
@@ -22,13 +30,13 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+          {navKeys.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium transition-colors hover:text-primary"
             >
-              {link.label}
+              {t(link.key)}
             </Link>
           ))}
         </nav>
@@ -36,7 +44,7 @@ export function Header() {
         {/* Actions */}
         <div className="flex items-center gap-4">
           <Button className="hidden sm:flex" size="sm">
-            Contactar
+            {t("contact")}
           </Button>
 
           {/* Mobile menu */}
@@ -47,7 +55,7 @@ export function Header() {
             onClick={() => setOpen(!open)}
           >
             <Menu className="h-5 w-5" />
-            <span className="sr-only">Abrir menú</span>
+            <span className="sr-only">Menu</span>
           </Button>
         </div>
       </div>
@@ -56,17 +64,17 @@ export function Header() {
       {open && (
         <div className="border-t border-border bg-background px-6 py-6 md:hidden">
           <nav className="flex flex-col gap-4">
-            {navLinks.map((link) => (
+            {navKeys.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="text-lg font-medium transition-colors hover:text-primary"
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
-            <Button className="mt-2 w-full">Contactar</Button>
+            <Button className="mt-2 w-full">{t("contact")}</Button>
           </nav>
         </div>
       )}

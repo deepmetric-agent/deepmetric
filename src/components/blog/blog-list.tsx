@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { useTranslations, useLocale } from "next-intl";
 
 type Post = {
   slug: string;
@@ -21,8 +23,9 @@ function estimateReadingTime(excerpt: string | null): number {
   return Math.max(3, Math.ceil(words / 40));
 }
 
-function PostCard({ post }: { post: Post }) {
+function PostCard({ post, locale, t }: { post: Post; locale: string; t: (key: string) => string }) {
   const readTime = estimateReadingTime(post.entry.excerpt);
+  const dateLocale = locale === "es" ? "es-ES" : "en-US";
 
   return (
     <Link
@@ -78,16 +81,16 @@ function PostCard({ post }: { post: Post }) {
           <div className="flex items-center gap-2">
             <Calendar className="h-3.5 w-3.5" />
             {post.entry.date
-              ? new Date(post.entry.date).toLocaleDateString("es-ES", {
+              ? new Date(post.entry.date).toLocaleDateString(dateLocale, {
                   year: "numeric",
                   month: "short",
                   day: "numeric",
                 })
-              : "Sin fecha"}
+              : t("no_date")}
           </div>
           <div className="flex items-center gap-2">
             <Clock className="h-3.5 w-3.5" />
-            {readTime} min
+            {readTime} {t("read_time")}
           </div>
         </div>
       </div>
@@ -96,11 +99,14 @@ function PostCard({ post }: { post: Post }) {
 }
 
 export function BlogList({ posts }: { posts: Post[] }) {
+  const t = useTranslations("blog");
+  const locale = useLocale();
+
   if (posts.length === 0) {
     return (
       <div className="py-20 text-center">
         <p className="text-lg text-muted-foreground">
-          No hay posts publicados todavía. ¡Pronto habrá contenido!
+          {t("empty")}
         </p>
       </div>
     );
@@ -109,7 +115,7 @@ export function BlogList({ posts }: { posts: Post[] }) {
   return (
     <section className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {posts.map((post) => (
-        <PostCard key={post.slug} post={post} />
+        <PostCard key={post.slug} post={post} locale={locale} t={t} />
       ))}
     </section>
   );

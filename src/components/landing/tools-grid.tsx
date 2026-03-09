@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Zap, Map, Heart, FileText } from "lucide-react";
 import { tools } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 
 const iconMap: Record<string, React.ReactNode> = {
   Zap: <Zap className="h-6 w-6" />,
@@ -9,14 +12,23 @@ const iconMap: Record<string, React.ReactNode> = {
   FileText: <FileText className="h-6 w-6" />,
 };
 
+const toolDescKeys: Record<string, string> = {
+  "Power Guide": "power_guide",
+  "Route Analyzer": "route_analyzer",
+  "HRV Compare": "hrv_compare",
+  "CPET Report": "cpet_report",
+};
+
 export function ToolsGrid() {
+  const t = useTranslations("tools");
+
   return (
     <section id="herramientas" className="bg-muted/30 px-6 py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Section header */}
         <div className="mb-12 flex flex-col items-start gap-2">
           <h2 className="text-3xl font-bold tracking-tight">
-            Herramientas de Análisis
+            {t("title")}
           </h2>
           <div className="h-1 w-20 rounded-full bg-primary" />
         </div>
@@ -40,14 +52,14 @@ export function ToolsGrid() {
               <div>
                 <h3 className="text-xl font-bold">{tool.name}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  {tool.description}
+                  {t(toolDescKeys[tool.name])}
                 </p>
               </div>
 
               {/* Link */}
               <div className="mt-auto pt-4">
                 <span className="inline-flex items-center gap-1 text-sm font-bold text-primary transition-all group-hover:gap-2">
-                  Saber más{" "}
+                  {t("more")}{" "}
                   <ArrowRight className="h-4 w-4" />
                 </span>
               </div>

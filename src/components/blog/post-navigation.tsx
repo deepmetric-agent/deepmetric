@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 type NavPost = { slug: string; title: string } | null;
 
@@ -9,6 +12,8 @@ type PostNavigationProps = {
 };
 
 export function PostNavigation({ prevPost, nextPost }: PostNavigationProps) {
+  const t = useTranslations("blog");
+
   if (!prevPost && !nextPost) return null;
 
   return (
@@ -19,7 +24,7 @@ export function PostNavigation({ prevPost, nextPost }: PostNavigationProps) {
           className="group flex flex-col gap-1 rounded-xl border border-border p-4 transition-colors hover:border-primary/50"
         >
           <span className="flex items-center gap-1 text-xs font-bold uppercase text-muted-foreground">
-            <ArrowLeft className="h-3 w-3" /> Anterior
+            <ArrowLeft className="h-3 w-3" /> {t("prev")}
           </span>
           <span className="font-medium transition-colors group-hover:text-primary">
             {prevPost.title}
@@ -34,7 +39,7 @@ export function PostNavigation({ prevPost, nextPost }: PostNavigationProps) {
           className="group flex flex-col items-end gap-1 rounded-xl border border-border p-4 text-right transition-colors hover:border-primary/50"
         >
           <span className="flex items-center gap-1 text-xs font-bold uppercase text-muted-foreground">
-            Siguiente <ArrowRight className="h-3 w-3" />
+            {t("next")} <ArrowRight className="h-3 w-3" />
           </span>
           <span className="font-medium transition-colors group-hover:text-primary">
             {nextPost.title}
