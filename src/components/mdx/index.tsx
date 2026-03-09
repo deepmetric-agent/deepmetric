@@ -131,6 +131,39 @@ function Citation({
   return <span className="text-muted-foreground">[{text}]</span>;
 }
 
+function ImageGallery({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="my-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+      {children}
+    </div>
+  );
+}
+
+function Tabs({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="my-6 rounded-lg border border-border [&>details]:border-b [&>details]:border-border [&>details:last-child]:border-b-0">
+      {children}
+    </div>
+  );
+}
+
+function Tab({
+  title,
+  children,
+}: {
+  title?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <details className="group">
+      <summary className="cursor-pointer px-4 py-3 text-sm font-bold transition-colors hover:text-primary">
+        {title ?? "Tab"}
+      </summary>
+      <div className="border-t border-border px-4 py-3">{children}</div>
+    </details>
+  );
+}
+
 export const mdxComponents: Record<string, React.ComponentType<any>> = {
   Callout,
   Collapsible,
@@ -138,4 +171,7 @@ export const mdxComponents: Record<string, React.ComponentType<any>> = {
   ToolDemo,
   ComparisonTable,
   Citation,
+  ImageGallery,
+  Tabs,
+  Tab,
 };
