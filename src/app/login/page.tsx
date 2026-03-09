@@ -4,7 +4,7 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Suspense } from "react";
-import { Activity, Github, Loader2 } from "lucide-react";
+import { Activity, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
@@ -95,23 +95,6 @@ function LoginForm() {
             {t("login")}
           </Button>
         </form>
-
-        {/* Divider */}
-        <div className="flex items-center gap-3">
-          <div className="h-px flex-1 bg-border" />
-          <span className="text-xs text-muted-foreground">o</span>
-          <div className="h-px flex-1 bg-border" />
-        </div>
-
-        {/* GitHub */}
-        <Button
-          variant="outline"
-          className="w-full gap-2"
-          onClick={() => signIn("github", { callbackUrl })}
-        >
-          <Github className="h-5 w-5" />
-          {t("login_github")}
-        </Button>
 
         <p className="text-xs text-muted-foreground">
           {t("login_note")}

@@ -11,6 +11,7 @@ import {
   HelpCircle,
   Activity,
   Search,
+  FileText,
 } from "lucide-react";
 import { AuthGuard } from "@/components/auth/auth-guard";
 import { UserNav } from "@/components/auth/user-nav";
@@ -18,11 +19,11 @@ import { cn } from "@/lib/utils";
 
 const sidebarLinks = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/keystatic/collection/posts", label: "Artículos", icon: FileText },
   { href: "/admin/users", label: "Users", icon: Users },
   { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/admin/tools", label: "Tools", icon: Wrench },
   { href: "/admin/settings", label: "Settings", icon: Settings },
-  { href: "/admin/help", label: "Help", icon: HelpCircle },
 ];
 
 export default function AdminLayout({

@@ -18,7 +18,18 @@ export default async function BlogPage() {
       (a, b) =>
         new Date(b.entry.date ?? 0).getTime() -
         new Date(a.entry.date ?? 0).getTime()
-    );
+    )
+    .map((p) => ({
+      slug: p.slug,
+      entry: {
+        title: p.entry.title,
+        date: p.entry.date,
+        tags: p.entry.tags,
+        heroImage: p.entry.heroImage,
+        excerpt: p.entry.excerpt,
+        locale: p.entry.locale,
+      },
+    }));
 
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LoginButton } from "@/components/auth/login-button";
+import { UserMenu } from "@/components/auth/user-menu";
 
 const navKeys = [
   { key: "tools", href: "#herramientas" },
@@ -46,6 +47,7 @@ export function Header() {
         {/* Actions */}
         <div className="flex items-center gap-4">
           <ThemeToggle />
+          <UserMenu />
           <LoginButton />
           <Button className="hidden sm:flex" size="sm">
             {t("contact")}

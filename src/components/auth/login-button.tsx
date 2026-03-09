@@ -1,8 +1,9 @@
 "use client";
 
-import { signIn, signOut, useSession } from "next-auth/react";
-import { Button } from "@/components/ui/button";
-import { Github, LogOut } from "lucide-react";
+import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { LogIn } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export function LoginButton() {
@@ -17,29 +18,15 @@ export function LoginButton() {
     );
   }
 
-  if (session) {
-    return (
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => signOut()}
-        className="gap-2"
-      >
-        <LogOut className="h-4 w-4" />
-        {t("logout")}
-      </Button>
-    );
-  }
+  if (session) return null;
 
   return (
-    <Button
-      variant="outline"
-      size="sm"
-      onClick={() => signIn("github")}
-      className="gap-2"
+    <Link
+      href="/login"
+      className={buttonVariants({ variant: "outline", size: "sm" }) + " gap-2"}
     >
-      <Github className="h-4 w-4" />
+      <LogIn className="h-4 w-4" />
       {t("login")}
-    </Button>
+    </Link>
   );
 }

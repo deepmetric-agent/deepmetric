@@ -43,6 +43,57 @@ export async function deleteUser(userId: string) {
   revalidatePath("/admin/users");
 }
 
+export async function createUser(data: {
+  name: string;
+  email: string;
+  role: string;
+}) {
+  await requireAdmin();
+  const validRoles = ["ADMIN", "CONTENT_MANAGER", "COLLABORATOR", "VIEWER"];
+  if (!validRoles.includes(data.role)) throw new Error("Invalid role");
+
+  const existing = await prisma.user.findUnique({ where: { email: data.email } });
+  if (existing) throw new Error("Email already registered");
+
+  const { hashSync } = await import("bcryptjs");
+  const generatedPassword =
+    Math.random().toString(36).slice(2, 8) +
+    Math.random().toString(36).slice(2, 4).toUpperCase() +
+    "!";
+  const passwordHash = hashSync(generatedPassword, 12);
+
+  const user = await prisma.user.create({
+    data: {
+      name: data.name,
+      email: data.email,
+      role: data.role,
+      passwordHash,
+    },
+  });
+
+  revalidatePath("/admin/users");
+  return { userId: user.id, generatedPassword };
+}
+
+export async function changePassword(userId: string, newPassword: string) {
+  const session = await auth();
+  if (!session?.user) throw new Error("Not authenticated");
+
+  const role = (session.user as Record<string, unknown>)?.role as string;
+  const isSelf = session.user.id === userId;
+  if (!isSelf && role !== "ADMIN") throw new Error("Not authorized");
+
+  if (newPassword.length < 6) throw new Error("Password too short");
+
+  const { hashSync } = await import("bcryptjs");
+  const passwordHash = hashSync(newPassword, 12);
+
+  await prisma.user.update({
+    where: { id: userId },
+    data: { passwordHash },
+  });
+}
+
 export async function getDashboardStats() {
   const session = await auth();
   if (!session?.user) throw new Error("Not authenticated");
