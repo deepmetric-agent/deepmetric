@@ -75,7 +75,12 @@
     "read_time": "min",
     "no_date": "Sin fecha",
     "prev": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "all_posts": "Todos",
+    "no_results": "No hay posts con ese tag.",
+    "share": "Compartir",
+    "copy_link": "Copiar enlace",
+    "related": "Posts relacionados"
   },
   "auth": {
     "login_title": "Inicia sesión para acceder al panel de administración",

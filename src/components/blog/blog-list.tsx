@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import { TagFilter } from "./tag-filter";
 
 type Post = {
   slug: string;
@@ -101,6 +103,15 @@ function PostCard({ post, locale, t }: { post: Post; locale: string; t: (key: st
 export function BlogList({ posts }: { posts: Post[] }) {
   const t = useTranslations("blog");
   const locale = useLocale();
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+
+  const allTags = Array.from(
+    new Set(posts.flatMap((p) => [...p.entry.tags]))
+  ).sort();
+
+  const filtered = activeTag
+    ? posts.filter((p) => p.entry.tags.includes(activeTag))
+    : posts;
 
   if (posts.length === 0) {
     return (
@@ -113,10 +124,18 @@ export function BlogList({ posts }: { posts: Post[] }) {
   }
 
   return (
-    <section className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {posts.map((post) => (
-        <PostCard key={post.slug} post={post} locale={locale} t={t} />
-      ))}
+    <section>
+      <TagFilter tags={allTags} activeTag={activeTag} onSelect={setActiveTag} />
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((post) => (
+          <PostCard key={post.slug} post={post} locale={locale} t={t} />
+        ))}
+      </div>
+      {filtered.length === 0 && (
+        <div className="py-12 text-center">
+          <p className="text-muted-foreground">{t("no_results")}</p>
+        </div>
+      )}
     </section>
   );
 }

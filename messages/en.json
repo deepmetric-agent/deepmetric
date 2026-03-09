@@ -75,7 +75,12 @@
     "read_time": "min",
     "no_date": "No date",
     "prev": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "all_posts": "All",
+    "no_results": "No posts found with that tag.",
+    "share": "Share",
+    "copy_link": "Copy link",
+    "related": "Related posts"
   },
   "auth": {
     "login_title": "Sign in to access the admin panel",

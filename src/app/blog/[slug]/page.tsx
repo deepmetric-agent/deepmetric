@@ -4,6 +4,8 @@ import { Header, Footer } from "@/components/landing";
 import { PostHeader } from "@/components/blog/post-header";
 import { PostContent } from "@/components/blog/post-content";
 import { PostNavigation } from "@/components/blog/post-navigation";
+import { ShareButtons } from "@/components/blog/share-buttons";
+import { RelatedPosts } from "@/components/blog/related-posts";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -65,6 +67,21 @@ export default async function PostPage({ params }: Props) {
       : null;
   const nextPost = currentIndex > 0 ? publishedPosts[currentIndex - 1] : null;
 
+  const postTags = [...post.tags] as string[];
+  const relatedPosts = publishedPosts
+    .filter(
+      (p) =>
+        p.slug !== slug &&
+        p.entry.tags.some((t) => postTags.includes(t as string))
+    )
+    .slice(0, 3)
+    .map((p) => ({
+      slug: p.slug,
+      title: p.entry.title,
+      tags: p.entry.tags,
+      date: p.entry.date,
+    }));
+
   const content = await post.content();
 
   const jsonLd = {
@@ -102,6 +119,12 @@ export default async function PostPage({ params }: Props) {
         />
 
         <PostContent content={content} />
+
+        <div className="mt-8 flex justify-end">
+          <ShareButtons title={post.title} slug={slug} />
+        </div>
+
+        <RelatedPosts posts={relatedPosts} />
 
         <PostNavigation
           prevPost={
