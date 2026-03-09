@@ -13,7 +13,7 @@ import { UserMenu } from "@/components/auth/user-menu";
 
 const navKeys = [
   { key: "tools", href: "#herramientas" },
-  { key: "coaching", href: "#servicios" },
+  { key: "services", href: "#servicios" },
   { key: "about", href: "#sobre-mi" },
   { key: "blog", href: "/blog" },
 ] as const;
