@@ -20,13 +20,23 @@ export default async function AdminPostsPage() {
             Gestiona los artículos publicados en el blog.
           </p>
         </div>
-        <Link
-          href="/keystatic/collection/posts/create"
-          className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
-        >
-          <Plus className="h-4 w-4" />
-          Nuevo artículo
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/blog"
+            target="_blank"
+            className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Ver blog
+          </Link>
+          <Link
+            href="/keystatic/collection/posts/create"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            <Plus className="h-4 w-4" />
+            Nuevo artículo
+          </Link>
+        </div>
       </div>
 
       <div className="overflow-hidden rounded-xl border border-border bg-card">

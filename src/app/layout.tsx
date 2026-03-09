@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Slab } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { SessionProvider } from "@/components/auth/session-provider";
@@ -11,8 +11,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const robotoSlab = Roboto_Slab({
-  variable: "--font-roboto-slab",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
 });
@@ -45,7 +45,7 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${robotoSlab.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
         <a
           href="#main-content"
