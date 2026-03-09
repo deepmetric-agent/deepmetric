@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "tools": "Tools",
+    "coaching": "Coaching",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "A new era in performance",
+    "title_pre": "DeepMetric —",
+    "title_highlight": "Sports Tech",
+    "title_post": "& Data-Driven Coaching",
+    "subtitle": "Custom-built tools and data-driven coaching services for athletes seeking maximum precision in training and competition.",
+    "cta_tools": "Explore tools",
+    "cta_blog": "Read the blog",
+    "metric_label": "Latest metric",
+    "metric_value": "Aerobic efficiency: +12% vs previous month"
+  },
+  "tools": {
+    "title": "Analysis Tools",
+    "more": "Learn more",
+    "power_guide": "Cycling pacing simulator. Power optimization and strategy for competitions.",
+    "route_analyzer": "Tactical route analysis with weather data, segments, and physiological demand.",
+    "hrv_compare": "Real-time HRV sensor comparison. Recovery and variability tracking.",
+    "cpet_report": "Automated CPET reports and AI-powered metabolic threshold analysis."
+  },
+  "about": {
+    "label": "The Founder",
+    "title": "Luisma",
+    "role": "Coach, Analyst & Developer",
+    "bio_1": "My approach combines cutting-edge exercise science with custom software development. I don't just analyze your data — I build the tools to interpret them better.",
+    "bio_2": "With years of experience in both tech and endurance sports, my mission is to bridge the gap between data complexity and practical training execution.",
+    "years": "Years Coaching",
+    "datasets": "Datasets analyzed"
+  },
+  "services": {
+    "title": "Specialized Services",
+    "subtitle": "High-performance solutions designed for individual athletes, teams, and sports brands.",
+    "popular": "Most requested",
+    "coaching_title": "1-to-1 Coaching",
+    "coaching_desc": "Fully personalized training based on your physiology and competition goals. Daily metrics analysis.",
+    "coaching_f1": "TrainingPeaks planning",
+    "coaching_f2": "Advanced WKO5 analysis",
+    "coaching_f3": "Weekly 15min review",
+    "coaching_cta": "View plans",
+    "tools_title": "Custom Tools",
+    "tools_desc": "Development of calculators, dashboards, or integrations specific to your sports data needs.",
+    "tools_f1": "Custom dashboards",
+    "tools_f2": "API Integrations (Strava/Garmin)",
+    "tools_f3": "Proprietary algorithms",
+    "tools_cta": "Request quote",
+    "consulting_title": "Consulting",
+    "consulting_desc": "One-off sessions for lactate test analysis, CPET reviews, or nutritional strategy design.",
+    "consulting_f1": "Test analysis",
+    "consulting_f2": "Aerodynamic optimization",
+    "consulting_f3": "Race strategy",
+    "consulting_cta": "Book a session"
+  },
+  "footer": {
+    "tagline": "Taking endurance training to the next level through rigorous data analysis and custom-built tools.",
+    "tools_heading": "Tools",
+    "community_heading": "Community",
+    "blog_link": "Performance Blog",
+    "newsletter": "Newsletter",
+    "case_studies": "Case studies",
+    "about_link": "About Luisma",
+    "preferences": "Preferences",
+    "rights": "All rights reserved."
+  },
+  "blog": {
+    "title": "DeepMetric Blog",
+    "subtitle": "Deep dives into Heart Rate Variability, cycling performance metrics, and the future of data-driven endurance athletics.",
+    "empty": "No posts published yet. Content coming soon!",
+    "read_time": "min",
+    "no_date": "No date",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "auth": {
+    "login_title": "Sign in to access the admin panel",
+    "login_github": "Continue with GitHub",
+    "login_note": "Only authorized users can access the panel.",
+    "logout": "Sign out",
+    "login": "Sign in",
+    "denied": "Access denied",
+    "denied_msg": "You don't have permission to access this section."
+  },
+  "common": {
+    "back_to_site": "← Back to site"
+  }
+}

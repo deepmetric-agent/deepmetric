@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "tools": "Herramientas",
+    "coaching": "Coaching",
+    "about": "Sobre mí",
+    "blog": "Blog",
+    "contact": "Contactar"
+  },
+  "hero": {
+    "badge": "Nueva era en rendimiento",
+    "title_pre": "DeepMetric —",
+    "title_highlight": "Sports Tech",
+    "title_post": "& Data-Driven Coaching",
+    "subtitle": "Herramientas propias y servicios de coaching basados en datos para atletas que buscan la máxima precisión en su entrenamiento y competición.",
+    "cta_tools": "Explorar herramientas",
+    "cta_blog": "Leer el blog",
+    "metric_label": "Última métrica",
+    "metric_value": "Eficiencia aeróbica: +12% vs mes anterior"
+  },
+  "tools": {
+    "title": "Herramientas de Análisis",
+    "more": "Saber más",
+    "power_guide": "Simulador de pacing ciclista. Optimización de potencia y estrategia para competiciones.",
+    "route_analyzer": "Análisis táctico de rutas con datos meteorológicos, segmentos y demanda fisiológica.",
+    "hrv_compare": "Comparativa de sensores HRV en tiempo real. Seguimiento de recuperación y variabilidad.",
+    "cpet_report": "Informes automatizados de ergoespirometría y análisis de umbrales metabólicos con IA."
+  },
+  "about": {
+    "label": "El Fundador",
+    "title": "Luisma",
+    "role": "Entrenador, Analista & Developer",
+    "bio_1": "Mi enfoque combina la ciencia del ejercicio más avanzada con el desarrollo de software a medida. No solo analizo tus datos; creo las herramientas para interpretarlos mejor.",
+    "bio_2": "Con años de experiencia en el sector tecnológico y el deporte de resistencia, mi misión es cerrar la brecha entre la complejidad de los datos y la ejecución práctica del entrenamiento.",
+    "years": "Años Coaching",
+    "datasets": "Datasets analizados"
+  },
+  "services": {
+    "title": "Servicios Especializados",
+    "subtitle": "Soluciones de alto rendimiento diseñadas para atletas individuales, equipos y marcas del sector deportivo.",
+    "popular": "Más solicitado",
+    "coaching_title": "Coaching 1-to-1",
+    "coaching_desc": "Entrenamiento totalmente personalizado basado en tu fisiología y objetivos de competición. Análisis diario de métricas.",
+    "coaching_f1": "Planificación en TrainingPeaks",
+    "coaching_f2": "Análisis WKO5 avanzado",
+    "coaching_f3": "Revisión semanal 15min",
+    "coaching_cta": "Ver planes",
+    "tools_title": "Herramientas a medida",
+    "tools_desc": "Desarrollo de calculadoras, dashboards o integraciones específicas para tus necesidades de datos deportivos.",
+    "tools_f1": "Dashboards personalizados",
+    "tools_f2": "API Integrations (Strava/Garmin)",
+    "tools_f3": "Algoritmos propios",
+    "tools_cta": "Consultar presupuesto",
+    "consulting_title": "Consultoría",
+    "consulting_desc": "Sesiones puntuales para análisis de test de lactato, ergoespirometrías o diseño de estrategia nutricional.",
+    "consulting_f1": "Análisis de tests",
+    "consulting_f2": "Optimización aerodinámica",
+    "consulting_f3": "Estrategia de carrera",
+    "consulting_cta": "Reservar sesión"
+  },
+  "footer": {
+    "tagline": "Llevando el entrenamiento de resistencia al siguiente nivel a través del análisis de datos riguroso y herramientas personalizadas.",
+    "tools_heading": "Herramientas",
+    "community_heading": "Comunidad",
+    "blog_link": "Blog de Rendimiento",
+    "newsletter": "Newsletter",
+    "case_studies": "Estudios de caso",
+    "about_link": "Sobre Luisma",
+    "preferences": "Preferencias",
+    "rights": "Todos los derechos reservados."
+  },
+  "blog": {
+    "title": "DeepMetric Blog",
+    "subtitle": "Deep dives sobre variabilidad de frecuencia cardíaca, métricas de rendimiento ciclista y el futuro del atletismo de resistencia basado en datos.",
+    "empty": "No hay posts publicados todavía. ¡Pronto habrá contenido!",
+    "read_time": "min",
+    "no_date": "Sin fecha",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "auth": {
+    "login_title": "Inicia sesión para acceder al panel de administración",
+    "login_github": "Continuar con GitHub",
+    "login_note": "Solo usuarios autorizados pueden acceder al panel.",
+    "logout": "Salir",
+    "login": "Iniciar sesión",
+    "denied": "Acceso denegado",
+    "denied_msg": "No tienes permisos para acceder a esta sección."
+  },
+  "common": {
+    "back_to_site": "← Volver al sitio"
+  }
+}
