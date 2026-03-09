@@ -50,7 +50,13 @@
     "consulting_f1": "Auditoría de datos y procesos",
     "consulting_f2": "Estrategia de IA aplicada",
     "consulting_f3": "Optimización de operativa de negocio",
-    "consulting_cta": "Solicitar consultoría"
+    "consulting_f4": "Instalación de MCP propio de intervals en LLM",
+    "consulting_cta": "Solicitar consultoría",
+    "training_title": "Formación Intervals",
+    "training_desc": "Clases especializadas de intervals.icu e Inteligencia Artificial aplicada al análisis de datos en Intervals para sacar el máximo partido a tu entrenamiento.",
+    "training_f1": "Cursos Sportcoach",
+    "training_f2": "Cursos Privados a Medida",
+    "training_cta": "Consultar presupuesto"
   },
   "footer": {
     "tagline": "Llevando el entrenamiento de resistencia al siguiente nivel a través del análisis de datos riguroso y herramientas personalizadas.",
@@ -90,7 +96,7 @@
   },
   "contact": {
     "label": "Contacto",
-    "title": "Hablemos de tu rendimiento",
+    "title": "Hablemos de tus Necesidades",
     "subtitle": "¿Tienes un proyecto, necesitas una herramienta a medida o quieres llevar tu entrenamiento al siguiente nivel? Cuéntame y te respondo en menos de 24h.",
     "email_label": "Email directo",
     "response_label": "Tiempo de respuesta",

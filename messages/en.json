@@ -50,7 +50,13 @@
     "consulting_f1": "Data & process audit",
     "consulting_f2": "Applied AI strategy",
     "consulting_f3": "Business operations optimization",
-    "consulting_cta": "Request consulting"
+    "consulting_f4": "Custom intervals MCP installation on LLM",
+    "consulting_cta": "Request consulting",
+    "training_title": "Intervals Training",
+    "training_desc": "Specialized intervals.icu classes and Artificial Intelligence applied to data analysis in Intervals to get the most out of your training.",
+    "training_f1": "Sportcoach Courses",
+    "training_f2": "Custom Private Courses",
+    "training_cta": "Request quote"
   },
   "footer": {
     "tagline": "Taking endurance training to the next level through rigorous data analysis and custom-built tools.",
@@ -90,7 +96,7 @@
   },
   "contact": {
     "label": "Contact",
-    "title": "Let's talk about your performance",
+    "title": "Let's talk about your Needs",
     "subtitle": "Have a project, need a custom tool, or want to take your training to the next level? Tell me about it and I'll get back to you within 24h.",
     "email_label": "Direct email",
     "response_label": "Response time",

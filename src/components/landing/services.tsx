@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, LineChart, CheckCircle } from "lucide-react";
+import { Code2, LineChart, GraduationCap, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
@@ -16,8 +16,15 @@ const serviceKeys = [
     icon: <LineChart className="h-9 w-9" />,
     titleKey: "consulting_title",
     descKey: "consulting_desc",
-    featureKeys: ["consulting_f1", "consulting_f2", "consulting_f3"],
+    featureKeys: ["consulting_f1", "consulting_f2", "consulting_f3", "consulting_f4"],
     ctaKey: "consulting_cta",
+  },
+  {
+    icon: <GraduationCap className="h-9 w-9" />,
+    titleKey: "training_title",
+    descKey: "training_desc",
+    featureKeys: ["training_f1", "training_f2"],
+    ctaKey: "training_cta",
   },
 ] as const;
 
@@ -41,7 +48,7 @@ export function Services() {
         </div>
 
         {/* Cards */}
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
           {serviceKeys.map((service) => (
             <div
               key={service.titleKey}

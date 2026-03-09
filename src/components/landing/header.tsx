@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, Activity } from "lucide-react";
+import Image from "next/image";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageSelector } from "@/components/language-selector";
 import { LoginButton } from "@/components/auth/login-button";
 import { UserMenu } from "@/components/auth/user-menu";
 
@@ -24,11 +26,23 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-primary">
-          <Activity className="h-7 w-7" />
-          <span className="text-xl font-black tracking-tighter">
-            DeepMetric<span className="text-primary">.fit</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logoclaro.png"
+            alt="DeepMetric"
+            width={160}
+            height={40}
+            className="block h-8 w-auto dark:hidden"
+            priority
+          />
+          <Image
+            src="/logooscuro.png"
+            alt="DeepMetric"
+            width={160}
+            height={40}
+            className="hidden h-8 w-auto dark:block"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -46,6 +60,7 @@ export function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
+          <LanguageSelector />
           <ThemeToggle />
           <UserMenu />
           <LoginButton />

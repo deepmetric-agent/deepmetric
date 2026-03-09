@@ -1,35 +1,34 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { Globe } from "lucide-react";
 
 const locales = [
-  { code: "es", label: "Español" },
-  { code: "en", label: "English" },
+  { code: "es", flag: "ES" },
+  { code: "en", flag: "EN" },
 ];
 
 export function LanguageSelector() {
   const locale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
 
-  function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    const newLocale = e.target.value;
-    document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000`;
+  function toggle() {
+    const next = locale === "es" ? "en" : "es";
+    document.cookie = `NEXT_LOCALE=${next};path=/;max-age=31536000`;
     router.refresh();
   }
 
+  const current = locales.find((l) => l.code === locale) ?? locales[0];
+
   return (
-    <select
-      value={locale}
-      onChange={handleChange}
-      className="w-full appearance-none rounded-lg border-none bg-muted px-4 py-2 text-sm focus:ring-1 focus:ring-primary"
+    <button
+      onClick={toggle}
+      className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-xs font-bold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+      title={locale === "es" ? "Switch to English" : "Cambiar a Español"}
     >
-      {locales.map((l) => (
-        <option key={l.code} value={l.code}>
-          {l.label}
-        </option>
-      ))}
-    </select>
+      <Globe className="h-3.5 w-3.5" />
+      {current.flag}
+    </button>
   );
 }
