@@ -88,6 +88,8 @@
     "login_note": "Only authorized users can access the panel.",
     "logout": "Sign out",
     "login": "Sign in",
+    "password": "Password",
+    "login_error": "Invalid email or password.",
     "denied": "Access denied",
     "denied_msg": "You don't have permission to access this section."
   },

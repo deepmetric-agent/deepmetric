@@ -8,6 +8,7 @@ export const authConfig: NextAuthConfig = {
       clientSecret: process.env.AUTH_GITHUB_SECRET,
     }),
   ],
+  session: { strategy: "jwt" },
   pages: {
     signIn: "/login",
   },

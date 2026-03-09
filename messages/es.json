@@ -88,6 +88,8 @@
     "login_note": "Solo usuarios autorizados pueden acceder al panel.",
     "logout": "Salir",
     "login": "Iniciar sesión",
+    "password": "Contraseña",
+    "login_error": "Email o contraseña incorrectos.",
     "denied": "Acceso denegado",
     "denied_msg": "No tienes permisos para acceder a esta sección."
   },
