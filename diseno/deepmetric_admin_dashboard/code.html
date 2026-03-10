@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DeepMetric.fit | Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ab1d6",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active {
+            background-color: rgba(10, 177, 214, 0.15);
+            color: #0ab1d6;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark/50 hidden md:flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined text-xl">database</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">DeepMetric<span class="text-primary">.fit</span></h1>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg sidebar-active transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">handyman</span>
+<span class="font-medium">Tools</span>
+</a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Support</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-medium">Help Center</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<div class="bg-primary/10 rounded-xl p-4 border border-primary/20">
+<p class="text-sm font-semibold text-primary">Pro Plan</p>
+<p class="text-xs text-slate-500 mt-1">Unlock advanced data visualization tools.</p>
+<button class="mt-3 w-full bg-primary text-background-dark text-xs font-bold py-2 rounded-lg hover:opacity-90 transition-opacity">
+                        Upgrade Now
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-slate-50 dark:bg-background-dark">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center justify-between px-8 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-semibold">Overview</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search data..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary/20 bg-primary/10">
+<img class="w-full h-full object-cover" data-alt="User profile avatar smiling professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcFtqOmqcCvcsFb1eYtvT5m72VbM5U9Oh1E6c7BYDonoO7squoMTbk_ziA_wtlwTeDwYX3cD-SeIKBeNIlP-bq0sDc6Nu-Gavy2eVw1Z43-X4sVXIPuh-loneHav_P2K3DyDEmS7KIzuYFsOCccFcz9s4g74YfseXmJ7Rtpujj6fkKgJBvUii1MXl2s1K1cPOEhmwCmFpT2PJAk8LNIdlXaIREVtMVOdEC_P0OFRvBLdE2ePBYfu_T77xDvJkLwmUoMEWz-HsBNkEd"/>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">person_add</span>
+<span class="text-xs font-medium text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-full">+12%</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Active Users</p>
+<h3 class="text-3xl font-bold mt-1">12,842</h3>
+<p class="text-xs text-slate-400 mt-4 italic">Updated 5m ago</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">article</span>
+<span class="text-xs font-medium text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-full">+5%</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Blog Posts</p>
+<h3 class="text-3xl font-bold mt-1">156</h3>
+<p class="text-xs text-slate-400 mt-4 italic">Pending review: 4</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">analytics</span>
+<span class="text-xs font-medium text-rose-500 bg-rose-500/10 px-2 py-1 rounded-full">-2%</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Tool Metrics</p>
+<h3 class="text-3xl font-bold mt-1">98.2%</h3>
+<p class="text-xs text-slate-400 mt-4 italic">System uptime goal: 99.9%</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Data Table -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold text-lg">Platform Performance</h3>
+<button class="text-sm font-medium text-primary hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs uppercase tracking-wider font-semibold">
+<th class="px-6 py-4">Tool Name</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Usage</th>
+<th class="px-6 py-4 text-right">Trend</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 font-medium">DeepMetric-V2</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-xs text-emerald-500 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Online
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right text-sm">8.4k calls</td>
+<td class="px-6 py-4 text-right">
+<div class="h-1.5 w-16 bg-slate-200 dark:bg-slate-700 rounded-full inline-block overflow-hidden">
+<div class="bg-primary h-full w-[85%] rounded-full"></div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 font-medium">NeuralFit-Engine</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-xs text-emerald-500 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Online
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right text-sm">12.1k calls</td>
+<td class="px-6 py-4 text-right">
+<div class="h-1.5 w-16 bg-slate-200 dark:bg-slate-700 rounded-full inline-block overflow-hidden">
+<div class="bg-primary h-full w-[95%] rounded-full"></div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 font-medium">BodyScanner-Pro</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-xs text-amber-500 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Slow
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right text-sm">2.3k calls</td>
+<td class="px-6 py-4 text-right">
+<div class="h-1.5 w-16 bg-slate-200 dark:bg-slate-700 rounded-full inline-block overflow-hidden">
+<div class="bg-primary h-full w-[45%] rounded-full"></div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 font-medium">CaloriePredictor</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Offline
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right text-sm">0 calls</td>
+<td class="px-6 py-4 text-right">
+<div class="h-1.5 w-16 bg-slate-200 dark:bg-slate-700 rounded-full inline-block overflow-hidden">
+<div class="bg-primary h-full w-[5%] rounded-full"></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- System Visualizer Card -->
+<div class="bg-gradient-to-br from-slate-900 to-background-dark p-6 rounded-xl border border-primary/20 relative overflow-hidden h-48 flex items-center">
+<div class="relative z-10">
+<h3 class="text-white font-bold text-xl mb-2">Real-time Traffic Monitoring</h3>
+<p class="text-slate-400 text-sm max-w-sm">Global endpoint latency is currently optimal. All secondary nodes are reporting healthy status.</p>
+<button class="mt-4 px-4 py-2 bg-primary text-background-dark font-bold text-xs rounded-lg uppercase tracking-widest">Open Visualizer</button>
+</div>
+<div class="absolute right-0 top-0 h-full w-1/2 bg-primary/5 blur-3xl rounded-full translate-x-1/2"></div>
+<span class="material-symbols-outlined absolute right-8 bottom-8 text-primary/20 text-9xl">hub</span>
+</div>
+</div>
+<!-- Recent Activity Timeline -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<h3 class="font-bold text-lg">Recent Activity</h3>
+</div>
+<div class="p-6 flex-1 space-y-6">
+<!-- Timeline Item -->
+<div class="flex gap-4 relative">
+<div class="absolute left-[11px] top-8 bottom-[-24px] w-px bg-slate-200 dark:bg-slate-800"></div>
+<div class="z-10 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+<span class="material-symbols-outlined text-[14px] text-primary">person_add</span>
+</div>
+<div>
+<p class="text-sm font-semibold">New User Registration</p>
+<p class="text-xs text-slate-500 mt-1">Alex Rivet just joined the platform.</p>
+<span class="text-[10px] text-slate-400 mt-2 block uppercase tracking-wider font-bold">2 mins ago</span>
+</div>
+</div>
+<!-- Timeline Item -->
+<div class="flex gap-4 relative">
+<div class="absolute left-[11px] top-8 bottom-[-24px] w-px bg-slate-200 dark:bg-slate-800"></div>
+<div class="z-10 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+<span class="material-symbols-outlined text-[14px] text-primary">article</span>
+</div>
+<div>
+<p class="text-sm font-semibold">Blog Post Published</p>
+<p class="text-xs text-slate-500 mt-1">"The Future of AI Fitness" is now live.</p>
+<span class="text-[10px] text-slate-400 mt-2 block uppercase tracking-wider font-bold">1 hour ago</span>
+</div>
+</div>
+<!-- Timeline Item -->
+<div class="flex gap-4 relative">
+<div class="absolute left-[11px] top-8 bottom-[-24px] w-px bg-slate-200 dark:bg-slate-800"></div>
+<div class="z-10 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+<span class="material-symbols-outlined text-[14px] text-primary">storage</span>
+</div>
+<div>
+<p class="text-sm font-semibold">System Backup Completed</p>
+<p class="text-xs text-slate-500 mt-1">Weekly snapshot stored in S3 cluster.</p>
+<span class="text-[10px] text-slate-400 mt-2 block uppercase tracking-wider font-bold">5 hours ago</span>
+</div>
+</div>
+<!-- Timeline Item -->
+<div class="flex gap-4 relative">
+<div class="z-10 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+<span class="material-symbols-outlined text-[14px] text-primary">report</span>
+</div>
+<div>
+<p class="text-sm font-semibold">API Rate Limit Warning</p>
+<p class="text-xs text-slate-500 mt-1">Node #12 spike detected in US-East.</p>
+<span class="text-[10px] text-slate-400 mt-2 block uppercase tracking-wider font-bold">8 hours ago</span>
+</div>
+</div>
+</div>
+<div class="p-6 pt-0 mt-auto">
+<button class="w-full py-2 border border-slate-200 dark:border-slate-800 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                View History
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

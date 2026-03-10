@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DeepMetric.fit | Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ab1d6",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">DeepMetric<span class="text-primary">.fit</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Tools</a>
+<a class="text-sm font-medium text-primary" href="#">Blog</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Admin</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary w-64 text-slate-100" placeholder="Search articles..." type="text"/>
+</div>
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 overflow-hidden">
+<img alt="Profile" data-alt="User profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1c52lR-3MozvTZfN6-R55iENMsr44LOKemHI_yHG--WzSELN_dMm3YRYIoBA_mY5PfgpeRlYKauzRDXr_zHxKaNKycJpmLBgfxfdxKxdwhojrqSDmVVWVAzYSIN9wBGfD1gtPX1KzdoZ6zILx_FxtHHKeBFfwpYg6PFxZ4-rgugzkjeJV-jCUOvVzYGk9vPaIgBZywfVyVmX85HR-gxXM3I3wbns7XpXZoCAMfP2iNPnzUvu3aflW_7x8VDPW-xdeU97GjhQ1AdCN"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Hero Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-black mb-4 leading-tight">DeepMetric Blog</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400">Deep dives into Heart Rate Variability, cycling performance metrics, and the future of data-driven endurance athletics.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-lg bg-primary text-background-dark font-semibold text-sm flex items-center gap-2">
+                        All Posts
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/20 transition-colors text-sm font-medium flex items-center gap-2">
+                        HRV <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/20 transition-colors text-sm font-medium flex items-center gap-2">
+                        Cycling <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/20 transition-colors text-sm font-medium flex items-center gap-2">
+                        Data Analysis <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Featured Post Card -->
+<div class="group relative overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex flex-col lg:flex-row">
+<div class="lg:w-3/5 h-64 lg:h-auto overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Modern cycling computer showing complex performance metrics" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvn2WV1UJN_X4VwyjpwLEbFMIenztzAvS_5THvM4qZ-oiODesw-xfNI4WKRQpcLBoi5nfqMTHza3Z3WSJPCciyyIjaA7ad_cnGJVRBvEC-arcgL4AfrnLcvPth5Ze4O1KLaodDP03gLXlOdO-XLYE8EyxfzPkJlMBKPjv8gx78mG0-aoXqdtBC0gdHee2pzKgVlXy8Fu3FL-4JPn3H9jutO1ECofg_WreqYzRFjOmA28upwuNSOleHMkXaE9nJXgdyKrf7XMgsIg1M');">
+</div>
+</div>
+<div class="lg:w-2/5 p-8 flex flex-col justify-center">
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Featured</span>
+<span class="px-2 py-1 rounded bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold uppercase tracking-wider">Data Analysis</span>
+</div>
+<h3 class="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">The Algorithms Behind Modern Power Curves</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6">Explore how critical power models have evolved and why the standard 20-minute FTP test might be holding your training back.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-3 text-sm text-slate-500">
+<span>Oct 28, 2023</span>
+<span class="w-1 h-1 rounded-full bg-slate-500"></span>
+<span>15 min read</span>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                            Read Article <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Grid of Posts -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Post 1 -->
+<div class="flex flex-col bg-slate-50 dark:bg-slate-800/30 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-primary/50 transition-colors">
+<div class="h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a smart watch showing heart rate variability wave" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHTYouwmnWYSPgxY4tPN4hCAgs24PkaPCiw-RBqYS6Q5589RCI-xnG6ZjsyO5CDhnTvfovmkoSTWsojcYH5ucwPMZFGVNCZNf0KjiIePfA88c0V2HFZrhxIh7JhQHTO8lID-3_dD9_gHrOP8hu2pYcOYsxb3yswfIC9lGgum5LMM2dVzDYcBtcGPcvPzXiQm__LDJ86-R9guShS4cKnl7VC5b0SMkamV4F8vwe-NiCrFf2wSRqWLo3Z3CifSw5xPRyMKtUUxAsQISR');"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex gap-2 mb-3">
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">HRV</span>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-snug">Morning Readiness: Using HRV to Prevent Overtraining</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">A practical guide to implementing morning heart rate variability readings into your daily routine to optimize recovery cycles.</p>
+<div class="mt-auto flex items-center justify-between text-xs text-slate-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            Oct 24, 2023
+                        </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            6 min
+                        </div>
+</div>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="flex flex-col bg-slate-50 dark:bg-slate-800/30 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-primary/50 transition-colors">
+<div class="h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Road cyclist climbing a steep mountain pass at sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbft-zTCFiPY_HbBLG5W8hSb7pHFGpDBbUeQ3rTbbHQRSjGUVIYiUUJLSFbteH4WFnvrmZ-p-6lY9EKlwSnZ4BIAbyl7uwzMIHwlgGRa6Knvbzg-r9Hubpg_AQjUaLkKXVBANRyauV5s6fOT5nAev-nlKKdzEyYSno93JTLoamXpcHDx7noX46X_qZaK5F5jcbonN3tOpBpiek13G9E9PKsHN7BdZ8MHXYvfte0doyraiH-WKO0h3Gpq67cV44WQ_2cHt4d927wkTv');"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex gap-2 mb-3">
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">Cycling</span>
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">Data Analysis</span>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-snug">Decoupling: When Your Heart Rate and Power Diverge</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">Analyzing aerobic efficiency through the lens of Pw:HR metrics. What does it mean for your base phase training?</p>
+<div class="mt-auto flex items-center justify-between text-xs text-slate-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            Oct 20, 2023
+                        </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            12 min
+                        </div>
+</div>
+</div>
+</div>
+<!-- Post 3 -->
+<div class="flex flex-col bg-slate-50 dark:bg-slate-800/30 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-primary/50 transition-colors">
+<div class="h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Abstract visualization of big data stream in blue and cyan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOOjkK8WZpwtgyUxyeNO2g8LRzrdcUkZApuYWqZ-Vah1y52G4pS0-gasoDtpZ6yxMt6Joy83VV1O-W716w0W6uz6KFAeY7H5iyXElES6hd1yofv0BvbE4-TkEpKVpWFLezIseaWiU8NSJfsbU4ce3rNEK4BR0Kwt-i_DLbzpIX2bOhz6EdQn0jOG7Hd5RTNLAPoRTkE7aKxi48_JTS4W6-kg24-NAuxPCIz7PUfVMN9tJsfIOw13Bg1Il37TH-Ow4ihWnFkmQaMnzr');"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex gap-2 mb-3">
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">Data Analysis</span>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-snug">The Bayesian Approach to Performance Prediction</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">How we use probabilistic models to forecast race results based on training load and historical fatigue resistance.</p>
+<div class="mt-auto flex items-center justify-between text-xs text-slate-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            Oct 15, 2023
+                        </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            8 min
+                        </div>
+</div>
+</div>
+</div>
+<!-- Post 4 -->
+<div class="flex flex-col bg-slate-50 dark:bg-slate-800/30 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-primary/50 transition-colors">
+<div class="h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Healthy organic meal preparation with vibrant vegetables" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCczFCQkn1k0di5X6J7gkMhChuFvstTPeHsNu0z4TwWK-mgOJQgAFF-r3MQZF68FbfuSFkDy0F3TswpH4cr7_Qu9NSk4xfpQ0ZT-KCWZ-Th8dWRvV4EYa62IZviHmalqQFDXfCj-CTY2bOKHo2DiICTe6R4abae_78VVEbYkDfI3M07DdX02Lx2_4-c0hjObPhFDggVjilhS8XAURP8vKEkUpFht06eM1swKbAnOVOA1JzAZIK_gl2tbzkkyvarCQdJuCBBJFhcrnIc');"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex gap-2 mb-3">
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">HRV</span>
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">Nutrition</span>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-snug">Inflammation and HRV: The Dietary Connection</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">How micronutrient deficiencies impact your autonomic nervous system and overall recovery metrics.</p>
+<div class="mt-auto flex items-center justify-between text-xs text-slate-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            Oct 12, 2023
+                        </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            10 min
+                        </div>
+</div>
+</div>
+</div>
+<!-- Post 5 -->
+<div class="flex flex-col bg-slate-50 dark:bg-slate-800/30 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-primary/50 transition-colors">
+<div class="h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Indoor cycling smart trainer setup in a dark room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8E-MidhJoa_Jamc3AIWzpz2SmF6SCGGkVcuc2Kc578-ci8CnwuoXLKDqio1fD0tm3ZIGYA1lQU9Bp5cK7glbaRd2xD-NCf_zNzOvwz2PeKCcl6a3QvXjIoR1gG088JR9zCnwno0phF3simyb6vfF5ieoz15aabYx-tf-1CKJXnGFwuflC-Pg1h23ASRIslFkjvoXAvD_QPJksWN8xW2uNAoGoe3WUFpx-QuoSxeA8JXVBq1ATVNX9o9f3hKmqCtljctvynFdmx52p');"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex gap-2 mb-3">
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">Cycling</span>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-snug">Winter Training: The Indoor Power Paradox</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">Why your indoor FTP might be lower than your outdoor numbers and how to adjust your training zones accordingly.</p>
+<div class="mt-auto flex items-center justify-between text-xs text-slate-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            Oct 08, 2023
+                        </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            7 min
+                        </div>
+</div>
+</div>
+</div>
+<!-- Post 6 -->
+<div class="flex flex-col bg-slate-50 dark:bg-slate-800/30 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group hover:border-primary/50 transition-colors">
+<div class="h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Close up of mechanical gears and chain on a high end bicycle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSaVOoQ9_PlAV-Erm8S4G_oJlWntAVD6-jhh3ccjY0HnO8rhZ60xF2-YMZbqc7KpF4G5dU6TYT5MEz17GdHj1ysWSkiHOwfBH7r40QPr60EN3Q26gRh0K7G9mztfuGcYCHfcuNJIl3WUoOYZlfdbiL8-2dZP9vDNZPd6JfUXvmJXWw6NjXUM4YAfMpX9jCbal6a5j3erZ1tqG825RvRHGKYAbJ1G4JwUfzHziDf_vr2Ty_On8yR5e20QNKfOqSosNhx15s5NQIQ5vg');"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex gap-2 mb-3">
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">Data Analysis</span>
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">Cycling</span>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-snug">Measuring W' Balance in Real Time</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">Managing your "matches" during a race using real-time W' balance modeling. Knowing exactly when to attack.</p>
+<div class="mt-auto flex items-center justify-between text-xs text-slate-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            Oct 05, 2023
+                        </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            14 min
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination -->
+<div class="mt-16 flex items-center justify-center gap-4">
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-lg bg-primary text-background-dark font-bold">1</button>
+<button class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800">2</button>
+<button class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800">3</button>
+<span class="flex items-center px-2">...</span>
+<button class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800">12</button>
+</div>
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-24 py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-background-dark/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl">architecture</span>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">DeepMetric<span class="text-primary">.fit</span></h1>
+</div>
+<div class="flex gap-8 text-sm text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">API Docs</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">rss_feed</span>
+</a>
+</div>
+</div>
+<div class="mt-8 text-center text-xs text-slate-500">
+                © 2023 DeepMetric.fit. All performance data analyzed and processed locally for your privacy.
+            </div>
+</div>
+</footer>
+</body></html>
