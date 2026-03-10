@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06b6d4",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="container mx-auto flex h-16 items-center justify-between px-6 lg:px-20">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="monitoring">monitoring</span>
+<h2 class="text-xl font-black tracking-tighter">DeepMetric.fit</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#herramientas">Herramientas</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios">Coaching</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#sobre-mi">Sobre mí</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-background-dark hover:bg-primary/90 transition-all">
+                        Contactar
+                    </button>
+<button class="md:hidden text-slate-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative px-6 py-16 lg:px-20 lg:py-32 overflow-hidden">
+<div class="container mx-auto grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
+<div class="flex flex-col gap-8 z-10">
+<div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary ring-1 ring-inset ring-primary/20">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            Nueva era en rendimiento
+                        </div>
+<h1 class="text-5xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white lg:text-7xl">
+                            DeepMetric — <span class="text-primary">Sports Tech</span> &amp; Data-Driven Coaching
+                        </h1>
+<p class="max-w-[540px] text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Herramientas propias y servicios de coaching basados en datos para atletas que buscan la máxima precisión en su entrenamiento y competición.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="h-14 min-w-[180px] rounded-xl bg-primary px-8 text-base font-bold text-background-dark shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+                                Explorar herramientas
+                            </button>
+<button class="h-14 min-w-[180px] rounded-xl bg-slate-200 dark:bg-slate-800 px-8 text-base font-bold text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                                Leer el blog
+                            </button>
+</div>
+</div>
+<div class="relative aspect-square lg:aspect-video w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+<img alt="Athlete monitoring data" class="h-full w-full object-cover mix-blend-overlay opacity-60" data-alt="Modern fitness dashboard with data charts and athlete" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3ZXvPxO-SRjJIyv1IKQx1DGa0y-KyMAp1Jb_jyOhBc66Q0kSMRET_tZakXusgIjK0yBxai4MgIHWGDZqKt_dO7Er3cNaf0__csCtIsBeqevvz_aDIz2DPCkTaT0n1dSRFOspe3qJKHu3LNt439xNeB7SjkeRFlOnu5zx0GUuuBX-35iDVvUFZnMHpHOBPZYKiDNuiQrxAG5ntJyRCwJndTGhms44sFmvM3MmlUSc9SKvLLGsw5jLsyNFuw6D6gEv-OMU1wMdhDcEB"/>
+<div class="absolute bottom-6 left-6 right-6 rounded-xl bg-background-dark/80 p-6 backdrop-blur-md border border-white/10">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<div class="text-sm font-bold text-white tracking-wide uppercase">Última métrica</div>
+<div class="text-xs text-slate-400">Eficiencia aeróbica: +12% vs mes anterior</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tools Grid Section -->
+<section class="px-6 py-20 lg:px-20 bg-slate-50 dark:bg-slate-900/30" id="herramientas">
+<div class="container mx-auto">
+<div class="mb-12 flex flex-col items-start gap-2">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Herramientas de Análisis</h2>
+<div class="h-1 w-20 rounded-full bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<!-- Power Guide -->
+<div class="group relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 p-6 border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">electric_bolt</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Power Guide</h3>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Optimización de potencia y pacing inteligente para competiciones.</p>
+</div>
+<div class="mt-auto pt-4">
+<a class="inline-flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all" href="#">
+                                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Route Analyzer -->
+<div class="group relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 p-6 border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Route Analyzer</h3>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Análisis detallado de segmentos, pendientes y demanda fisiológica.</p>
+</div>
+<div class="mt-auto pt-4">
+<a class="inline-flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all" href="#">
+                                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- HRV Compare -->
+<div class="group relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 p-6 border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">HRV Compare</h3>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Seguimiento de la recuperación y variabilidad de frecuencia cardíaca.</p>
+</div>
+<div class="mt-auto pt-4">
+<a class="inline-flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all" href="#">
+                                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- CPET Report -->
+<div class="group relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 p-6 border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">CPET Report</h3>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Informes automatizados de ergoespirometría y umbrales metabólicos.</p>
+</div>
+<div class="mt-auto pt-4">
+<a class="inline-flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all" href="#">
+                                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section (Luisma) -->
+<section class="px-6 py-20 lg:px-20 overflow-hidden" id="sobre-mi">
+<div class="container mx-auto max-w-6xl">
+<div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+<div class="relative order-2 lg:order-1">
+<div class="absolute -inset-4 bg-primary/20 blur-2xl rounded-full"></div>
+<img alt="Luisma - Entrenador y Developer" class="relative aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" data-alt="Professional athlete profile photo in dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtgYw6PU24eVMrh0jV9nM4VMI51j548Oxh9vKB2SH_TTp3x4w4yi3RPpSzn2GthTj0DKuD96f5daSzrd0Ll78HZU_BVVUEvAobB9Pv-8tVGVwmSAp4-qrAZL3dbwL7oFBTIztXSbxvDA6wD62e-avyw8_bDNffvI98qCuxsqZO4at5l0H3o1FC61yE7UxTgam-fILvw_VXlDLVKZJUbq_Tvhd2EG-2Atc53wO1-0w9PYeQaAiL05PurUGV_ENSJnaiVHXRccHSCBIc"/>
+<div class="absolute -bottom-6 -right-6 h-32 w-32 rounded-2xl bg-primary flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-5xl text-background-dark">code</span>
+</div>
+</div>
+<div class="flex flex-col gap-6 order-1 lg:order-2">
+<div class="inline-flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-xs">
+<span class="h-px w-8 bg-primary"></span>
+                                El Fundador
+                            </div>
+<h2 class="text-4xl font-black text-slate-900 dark:text-white">Luisma</h2>
+<p class="text-xl font-medium text-primary">Entrenador, Analista &amp; Developer</p>
+<div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+<p>
+                                    Mi enfoque combina la ciencia del ejercicio más avanzada con el desarrollo de software a medida. No solo analizo tus datos; creo las herramientas para interpretarlos mejor.
+                                </p>
+<p>
+                                    Con años de experiencia en el sector tecnológico y el deporte de resistencia, mi misión es cerrar la brecha entre la complejidad de los datos y la ejecución práctica del entrenamiento.
+                                </p>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4">
+<div class="rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+<div class="text-2xl font-bold text-slate-900 dark:text-white">10+</div>
+<div class="text-xs text-slate-500 uppercase font-bold">Años Coaching</div>
+</div>
+<div class="rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+<div class="text-2xl font-bold text-slate-900 dark:text-white">500+</div>
+<div class="text-xs text-slate-500 uppercase font-bold">Datasets analizados</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="px-6 py-20 lg:px-20 bg-background-dark text-white border-y border-slate-800" id="servicios">
+<div class="container mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-4xl font-black tracking-tight mb-4">Servicios Especializados</h2>
+<p class="mx-auto max-w-2xl text-slate-400">Soluciones de alto rendimiento diseñadas para atletas individuales, equipos y marcas del sector deportivo.</p>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+<div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/50 p-8 transition-all hover:bg-slate-900">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">fitness_center</span>
+<h3 class="text-2xl font-bold mb-4">Coaching 1-to-1</h3>
+<p class="text-slate-400 mb-6 flex-grow">Entrenamiento totalmente personalizado basado en tu fisiología y objetivos de competición. Análisis diario de métricas.</p>
+<ul class="space-y-3 mb-8 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Planificación en TrainingPeaks</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Análisis WKO5 avanzado</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Revisión semanal 15min</li>
+</ul>
+<button class="w-full rounded-lg border border-primary/30 py-3 text-sm font-bold text-primary hover:bg-primary hover:text-background-dark transition-all">Ver planes</button>
+</div>
+<div class="flex flex-col rounded-2xl border-2 border-primary bg-slate-900/50 p-8 relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-[10px] font-black uppercase text-background-dark">Más solicitado</div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">data_object</span>
+<h3 class="text-2xl font-bold mb-4">Herramientas a medida</h3>
+<p class="text-slate-400 mb-6 flex-grow">Desarrollo de calculadoras, dashboards o integraciones específicas para tus necesidades de datos deportivos.</p>
+<ul class="space-y-3 mb-8 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Dashboards personalizados</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> API Integrations (Strava/Garmin)</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Algoritmos propios</li>
+</ul>
+<button class="w-full rounded-lg bg-primary py-3 text-sm font-bold text-background-dark hover:bg-primary/90 transition-all">Consultar presupuesto</button>
+</div>
+<div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/50 p-8 transition-all hover:bg-slate-900">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">insights</span>
+<h3 class="text-2xl font-bold mb-4">Consultoría</h3>
+<p class="text-slate-400 mb-6 flex-grow">Sesiones puntuales para análisis de test de lactato, ergoespirometrías o diseño de estrategia nutricional.</p>
+<ul class="space-y-3 mb-8 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Análisis de tests</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Optimización aerodinámica</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Estrategia de carrera</li>
+</ul>
+<button class="w-full rounded-lg border border-primary/30 py-3 text-sm font-bold text-primary hover:bg-primary hover:text-background-dark transition-all">Reservar sesión</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-background-dark px-6 py-12 lg:px-20 border-t border-slate-200 dark:border-slate-800">
+<div class="container mx-auto">
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-4">
+<div class="col-span-1 lg:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">monitoring</span>
+<h2 class="text-xl font-black tracking-tighter">DeepMetric.fit</h2>
+</div>
+<p class="text-sm text-slate-500 mb-6">Llevando el entrenamiento de resistencia al siguiente nivel a través del análisis de datos riguroso y herramientas personalizadas.</p>
+<div class="flex gap-4">
+<a class="h-10 w-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="h-10 w-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-6">Herramientas</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Power Guide</a></li>
+<li><a class="hover:text-primary" href="#">Route Analyzer</a></li>
+<li><a class="hover:text-primary" href="#">HRV Tracking</a></li>
+<li><a class="hover:text-primary" href="#">CPET Reports</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-6">Comunidad</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Blog de Rendimiento</a></li>
+<li><a class="hover:text-primary" href="#">Newsletter</a></li>
+<li><a class="hover:text-primary" href="#">Estudios de caso</a></li>
+<li><a class="hover:text-primary" href="#">Sobre Luisma</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-6">Preferencias</h4>
+<div class="flex flex-col gap-4">
+<div class="relative">
+<select class="w-full appearance-none rounded-lg bg-slate-200 dark:bg-slate-800 border-none px-4 py-2 text-sm text-slate-900 dark:text-white focus:ring-1 focus:ring-primary">
+<option>Español</option>
+<option>English</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2 pointer-events-none text-slate-500">expand_more</span>
+</div>
+<p class="text-[10px] text-slate-500">© 2024 DeepMetric.fit. Todos los derechos reservados.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
