@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
 const serviceKeys = [
-  "coaching",
   "tools",
   "consulting",
-  "other",
+  "training",
 ] as const;
 
 export function Contact() {

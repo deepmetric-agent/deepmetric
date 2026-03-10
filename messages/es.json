@@ -4,7 +4,7 @@
     "services": "Servicios",
     "about": "Sobre mí",
     "blog": "Blog",
-    "software": "Software",
+    "deephrv": "DeepHRV",
     "contact": "Contactar"
   },
   "hero": {
@@ -24,11 +24,16 @@
     "power_guide": "Simulador de pacing ciclista. Optimización de potencia y estrategia para competiciones.",
     "route_analyzer": "Análisis táctico de rutas con datos meteorológicos, segmentos y demanda fisiológica.",
     "hrv_compare": "Comparativa de sensores HRV en tiempo real. Seguimiento de recuperación y variabilidad.",
-    "cpet_report": "Informes automatizados de ergoespirometría y análisis de umbrales metabólicos con IA."
+    "cpet_report": "Informes automatizados de ergoespirometría y análisis de umbrales metabólicos con IA.",
+    "restricted_badge": "Acceso Restringido",
+    "restricted_title": "Acceso Restringido",
+    "restricted_desc": "Esta herramienta está disponible únicamente para usuarios autorizados. Contacta con nosotros para solicitar acceso.",
+    "restricted_contact": "Solicitar acceso",
+    "restricted_close": "Cerrar"
   },
   "about": {
     "label": "El Fundador",
-    "title": "Luisma",
+    "title": "Luisma Gallego",
     "role": "Entrenador, Analista & Developer",
     "bio_1": "Mi enfoque combina la ciencia del ejercicio más avanzada con el desarrollo de software a medida. No solo analizo tus datos; creo las herramientas para interpretarlos mejor.",
     "bio_2": "Con años de experiencia en el sector tecnológico y el deporte de resistencia, mi misión es cerrar la brecha entre la complejidad de los datos y la ejecución práctica del entrenamiento.",
@@ -66,7 +71,7 @@
     "blog_link": "Blog de Rendimiento",
     "newsletter": "Newsletter",
     "case_studies": "Estudios de caso",
-    "about_link": "Sobre Luisma",
+    "about_link": "Sobre Luisma Gallego",
     "preferences": "Preferencias",
     "rights": "Todos los derechos reservados."
   },
@@ -98,7 +103,7 @@
   "contact": {
     "label": "Contacto",
     "title": "Hablemos de tus Necesidades",
-    "subtitle": "¿Tienes un proyecto, necesitas una herramienta a medida o quieres llevar tu entrenamiento al siguiente nivel? Cuéntame y te respondo en menos de 24h.",
+    "subtitle": "¿Tienes un proyecto, necesitas una herramienta a medida o quieres formarte en intervals.icu con IA? Cuéntame y te respondo en menos de 24h.",
     "email_label": "Email directo",
     "response_label": "Tiempo de respuesta",
     "response_time": "< 24 horas en días laborables",
@@ -109,10 +114,9 @@
     "phone": "Teléfono",
     "service_label": "Servicio",
     "service_placeholder": "Selecciona un servicio",
-    "service_coaching": "Coaching 1-to-1",
-    "service_tools": "Herramienta a medida",
-    "service_consulting": "Consultoría",
-    "service_other": "Otro",
+    "service_tools": "Herramientas a medida",
+    "service_consulting": "Consultoría IA & Datos",
+    "service_training": "Formación Intervals",
     "message": "Mensaje",
     "send": "Enviar mensaje",
     "sending": "Enviando...",
